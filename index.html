@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир Археологии на Русском: Открытия и Ресурсы</title> <!-- Изменено название страницы -->
+    <!-- Подключаем Google Fonts для красивого шрифта -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Подключаем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Общие стили и сброс */
+        :root {
+            --primary-color: #6a0505; /* Темно-красный/коричневый для акцентов */
+            --secondary-color: #2c3e50; /* Темно-синий/почти черный для текста */
+            --accent-color: #e6b89e; /* Светлый бежевый для фона */
+            --text-light-color: #f8f8f8;
+            --card-bg-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-color: var(--accent-color);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #4a0404);
+            color: var(--text-light-color);
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        header h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header h1 .fas {
+            margin-right: 15px;
+            color: #ffd700; /* Золотой цвет для иконки */
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* Введение */
+        .introduction {
+            background-color: var(--card-bg-color);
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px var(--shadow-color);
+            text-align: center;
+        }
+
+        .introduction h2 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        .introduction p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Сетка ссылок */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .link-card {
+            background-color: var(--card-bg-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-card h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .link-card p {
+            font-size: 1em;
+            color: #666;
+            flex-grow: 1; /* Чтобы текст занимал все доступное место */
+            margin-bottom: 20px;
+        }
+
+        .link-card a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-light-color);
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            align-self: flex-start; /* Прижать кнопку к низу левому краю */
+        }
+
+        .link-card a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .link-card a .fas {
+            margin-left: 8px;
+        }
+
+        /* Подвал сайта */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light-color);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+        footer .fas {
+            color: #e74c3c; /* Красное сердечко */
+            margin: 0 5px;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .introduction {
+                padding: 30px;
+            }
+
+            .introduction h2 {
+                font-size: 1.8em;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+            }
+
+            .link-card {
+                padding: 25px;
+            }
+
+            .link-card h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-atlas"></i> Мир Археологии на Русском</h1> <!-- Изменено название в шапке -->
+            <p>Ваш личный путеводитель по миру древних цивилизаций: новости и исследования со всего света на русском языке.</p> <!-- Изменен подзаголовок -->
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="introduction">
+            <h2>Добро пожаловать в коллектор русскоязычных ресурсов по археологии!</h2>
+            <p>Здесь вы найдете обширный список ссылок на научные учреждения, музеи, образовательные проекты, региональные общества, научно-популярные порталы и СМИ, посвященные изучению прошлого как России, так и всего мира.</p> <!-- Изменен текст введения -->
+        </section>
+
+        <section class="links-grid">
+            <!-- Ведущие институты и музеи -->
+            <article class="link-card">
+                <h3>Институт археологии РАН</h3>
+                <p>Главное научное учреждение России, занимающееся археологическими исследованиями, координацией экспедиций и издательской деятельностью.</p>
+                <a href="http://www.archaeolog.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Государственный исторический музей (ГИМ)</h3>
+                <p>Один из крупнейших музеев России с богатейшими археологическими коллекциями, охватывающими историю с древнейших времен до наших дней.</p>
+                <a href="https://shm.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Государственный Эрмитаж</h3>
+                <p>Всемирно известный музей, обладающий обширными археологическими коллекциями по Древнему миру, Евразии, Кавказу и Востоку.</p>
+                <a href="https://www.hermitagemuseum.org/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>ИИМК РАН (Санкт-Петербург)</h3>
+                <p>Институт истории материальной культуры РАН – ведущий центр региональных археологических исследований, особенно по Северной Евразии и Сибири.</p>
+                <a href="https://www.archeo.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Институт археологии Крыма РАН</h3>
+                <p>Научное учреждение, специализирующееся на археологических исследованиях и сохранении наследия Крымского полуострова.</p>
+                <a href="https://iak-ran.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>ИПОС СО РАН (Тюмень)</h3>
+                <p>Институт проблем освоения Севера СО РАН – крупный академический институт, занимающийся археологией северных и арктических регионов Евразии.</p>
+                <a href="https://ipdn.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Государственный архив древних актов</h3>
+                <p>Федеральный архив, хранящий ценнейшие исторические документы, важные для исследователей древних периодов истории России.</p>
+                <a href="https://fgurgia.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <!-- Научно-популярные / Новостные порталы -->
+            <article class="link-card">
+                <h3>Антропогенез.ру (С. Дробышевский)</h3>
+                <p>Крупнейший научно-популярный портал об эволюции человека, палеоантропологии и древнейшей археологии. Ресурс популяризатора Станислава Дробышевского.</p>
+                <a href="https://antropogenez.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Naked Science: Археология</h3>
+                <p>Популярное научно-популярное издание с актуальными новостями, статьями и исследованиями в области археологии со всего мира.</p>
+                <a href="https://naked-science.ru/tags/arheologiya" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Культурное наследие России</h3>
+                <p>Портал, посвященный памятникам истории и культуры России, включая археологические объекты, их описание и исследования.</p>
+                <a href="https://xn--80aajhqhktebqcvc2c9e6cj.xn--p1ai/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Археология.Ру</h3>
+                <p>Старейший русскоязычный портал об археологии, предлагающий новости, статьи и материалы по истории и исследованиям.</p>
+                <a href="http://www.archaeology.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>ИИМК РАН в VK</h3>
+                <p>Официальная страница Института истории материальной культуры РАН в социальной сети ВКонтакте с новостями экспедиций и публикациями.</p>
+                <a href="https://vk.com/archaeru" target="_blank" rel="noopener noreferrer">
+                    Перейти в группу <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>История.РФ: В мире археологии</h3>
+                <p>Раздел крупного исторического портала, публикующий новости, статьи и аналитические материалы по археологическим открытиям.</p>
+                <a href="https://historyrussia.org/sobytiya/v-mire-arkheologii.html" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Российские древности</h3>
+                <p>Портал, посвященный археологическим находкам и древним памятникам на территории России, с описаниями и фотоматериалами.</p>
+                <a href="https://russiandig.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>New-Science.ru: Археология</h3>
+                <p>Научно-популярный новостной портал, освещающий последние открытия и исследования в области археологии.</p>
+                <a href="https://new-science.ru/category/arheologiya/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Вокруг Света: Археология</h3>
+                <p>Раздел известного научно-популярного журнала "Вокруг Света" с интересными статьями об археологических находках и экспедициях.</p>
+                <a href="https://www.vokrugsveta.ru/sovremennaya-nauka/arxeologiya/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Поиск: Археология</h3>
+                <p>Новости науки и высшего образования в России, включая регулярные публикации о последних археологических исследованиях и открытиях.</p>
+                <a href="https://poisknews.ru/category/arheologiya/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>RussianOld.ru: Археология</h3>
+                <p>Портал, посвященный истории и культуре Руси, включая статьи и материалы по археологическим аспектам древней России.</p>
+                <a href="https://russianold.ru/category/%D0%B0%D1%80%D1%85%D0%B5%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Historicus.media: Новости</h3>
+                <p>Исторический портал, регулярно публикующий новости и аналитические материалы, в том числе и по археологической тематике.</p>
+                <a href="https://historicus.media/news/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>РБК Life: Археология</h3>
+                <p>Раздел новостного портала РБК, освещающий интересные события и открытия в мире науки и археологии для широкой аудитории.</p>
+                <a href="https://www.rbc.ru/life/tag/archeology" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Большая российская энциклопедия: Археология</h3>
+                <p>Энциклопедический раздел, содержащий авторитетные статьи и определения по ключевым понятиям и открытиям в археологии.</p>
+                <a href="https://old.bigenc.ru/section/archeology" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Культурология.РФ: История</h3>
+                <p>Раздел популярного портала о культуре, включающий статьи и обзоры, касающиеся исторических и археологических аспектов.</p>
+                <a href="https://kulturologia.ru/blogs/show/history/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Life.ru: Археология</h3>
+                <p>Раздел популярного новостного портала, освещающий актуальные открытия и события в сфере археологии.</p>
+                <a href="https://life.ru/c/nauka-i-tehnologii/arheologiya" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Rutube канал "Археология"</h3>
+                <p>Видеоматериалы, лекции и обзоры по археологической тематике на видеохостинге Rutube.</p>
+                <a href="https://rutube.ru/channel/23923538/" target="_blank" rel="noopener noreferrer">
+                    Перейти на канал <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>РИА Новости: Археология</h3>
+                <p>Раздел крупного информационного агентства, предоставляющий новости и аналитические материалы по археологическим темам.</p>
+                <a href="https://ria.ru/tag_thematic_category_Arkheologija/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Mail.ru Новости: Археология</h3>
+                <p>Новостной агрегатор с подборкой актуальных материалов об археологических открытиях и исследованиях.</p>
+                <a href="https://news.mail.ru/tag/564-arheologiya/" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>PlainNews.ru: Археологи</h3>
+                <p>Новостной портал с разделом, посвященным последним событиям и находкам в археологии.</p>
+                <a href="https://plainnews.ru/arheologi" target="_blank" rel="noopener noreferrer">
+                    Посетить раздел <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+            
+            <!-- Общества, кафедры, специализированные проекты -->
+            <article class="link-card">
+                <h3>Российское археологическое общество</h3>
+                <p>Общественная организация, объединяющая специалистов и любителей археологии, содействующая развитию науки и сохранению наследия.</p>
+                <a href="https://rosarchras.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>3D Archaeology (Проект)</h3>
+                <p>Проект, посвященный использованию 3D-технологий в археологии для моделирования и сохранения исторических объектов.</p>
+                <a href="https://3darchaeology.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>СЗАЭ (Северо-Западная экспедиция)</h3>
+                <p>Сайт Северо-Западной археологической экспедиции, освещающий исследования и находки в регионе.</p>
+                <a href="https://nwae.spb.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Музей-заповедник "Астафьевские курганы"</h3>
+                <p>Региональный музей-заповедник, посвященный археологическим памятникам и находкам, связанным с древними культурами.</p>
+                <a href="https://maiask.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Северная археология</h3>
+                <p>Проект или сообщество, занимающееся исследованиями и популяризацией археологического наследия северных территорий.</p>
+                <a href="https://nordarcheo.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>КФУ: Кафедра археологии и истории</h3>
+                <p>Сайт кафедры археологии и всеобщей истории Крымского федерального университета, представляющий научные и образовательные материалы.</p>
+                <a href="https://maiet.cfuv.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Донское археологическое общество</h3>
+                <p>Общество, занимающееся изучением и сохранением археологического наследия Донского региона.</p>
+                <a href="https://donovedenie.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Артезиан.су (Экспедиция)</h3>
+                <p>Сайт археологической экспедиции "Артезиан", проводящей исследования в различных регионах.</p>
+                <a href="https://artezian.su/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>Евразийские степи (Журнал/Проект)</h3>
+                <p>Ресурс, посвященный археологии и истории степных территорий Евразии, с публикациями и исследованиями.</p>
+                <a href="https://www.evrazstep.ru/index.php/aes" target="_blank" rel="noopener noreferrer">
+                    Посетить ресурс <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+
+            <article class="link-card">
+                <h3>MD Russia (Металлопоиск)</h3>
+                <p>Портал, посвященный металлопоиску и связанным с ним археологическим находкам, содержит статьи и обзоры.</p>
+                <a href="https://mdrussia.ru/" target="_blank" rel="noopener noreferrer">
+                    Посетить сайт <i class="fas fa-external-link-alt"></i>
+                </a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Мир Археологии на Русском. Все права защищены. Ссылки актуальны на январь 2024. Включены ресурсы, предоставленные пользователем.</p>
+            <p>Создано с <i class="fas fa-heart"></i> для любителей истории.</p>
+        </div>
+    </footer>
+</body>
+</html>
